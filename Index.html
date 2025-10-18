@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatAi by Dimal Parmar</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <header class="bg-indigo-600 text-white shadow-lg p-4 sticky top-0 z-10">
+    <h1 class="text-2xl font-extrabold flex items-center">
+
+Gemini Clone
+    </h1>
+  </header>
+
+  <main class="flex-1 overflow-hidden p-4 flex justify-center">
+    <div class="w-full max-w-3xl flex flex-col">
+
+      <div id="chat-window" class="p-4 flex flex-col space-y-4">
+        <div class="flex justify-start">
+          <div class="bg-white border border-gray-200 p-4 rounded-xl max-w-lg text-sm text-gray-800 shadow-md">
+           <h2>Welcome!</h2>
+  I'm <b>Jarvis</b> — your AI assistant built using the <b>Gemini API</b> with Google Search grounding.
+  Type any question or query below, and I’ll give you an instant AI-powered response!
+          </div>
+        </div>
+      </div>
+<video autoplay muted loop id="bg-video">
+  <source src="Ai.mp4" type="video/mp4">
+</video>
+
+      <div class="p-4 pt-2 sticky bottom-0 bg-f7f9fb">
+        <div id="input-container" class="flex items-end space-x-2">
+          <textarea id="user-input" 
+                    placeholder="Ask a question..." 
+                    rows="1"
+                    class="flex-1 text-base p-2 border-0 focus:ring-0 rounded-lg max-h-40"></textarea>
+          
+          <button id="send-button" 
+                  class="p-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition disabled:opacity-50 text-sm font-semibold flex items-center justify-center w-12 h-12">
+            <svg id="send-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+            <div id="loading-spinner" class="spinner hidden"></div>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
